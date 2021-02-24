@@ -1,0 +1,27 @@
+{
+  "name": "babel-react-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel src/index.tsx -o cli.js && node cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/node": "^14.14.31",
+    "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@types/react": "^17.0.2",
+    "ink": "^3.0.8",
+    "react": "^17.0.1"
+  }
+}
