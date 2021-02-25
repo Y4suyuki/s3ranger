@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel src/index.tsx -o cli.js && node cli.js",
+    "cli": "babel --extensions '.tsx' src --out-dir lib && node ./lib/index.js",
+    "build": "babel --extensions '.tsx' src --out-dir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,7 +22,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@types/react": "^17.0.2",
+    "aws-sdk": "^2.850.0",
     "ink": "^3.0.8",
+    "meow": "^9.0.0",
     "react": "^17.0.1"
   }
 }

@@ -1,20 +1,24 @@
-import React, {useState, useEffect} from 'react'
-import {render, Text} from 'ink';
+import React from 'react'
+import {render} from 'ink';
+import S3Ranger from "./S3Ranger"
+import meow from "meow"
 
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
+const cli = meow(`
+  Usage
+  $ cli
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCounter(prev => prev + 1)
-    }, 100);
+  Options
+    --profile, -p  aws profile name
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-  
-  return <Text color="green">{counter} tests passed</Text>;
-}
+  Examples
+    $ cli --profile foo
+`, {
+  flags: {
+    profile: {
+      type: 'string',
+      alias: 'p'
+    }
+  }
+})
 
-render(<Counter />);
+render(<S3Ranger {...cli.flags} />);
