@@ -1,8 +1,7 @@
 import React, { useEffect, useState} from "react";
-import { Box, Text, useApp, useFocus, useFocusManager, useInput } from "ink";
+import { Box, Text } from "ink";
 import AWS from "aws-sdk"
 import ObjectViewer from "./ObjectViewer";
-import NavigationList from "./NavigationList";
 import BucketViewer from "./BucketViewer";
 
 
