@@ -12,14 +12,14 @@ const ObjectViewer: React.FC<{lst: string[]}> = ({ lst }) => {
     setSelected(0);
   }, [lst])
 
-  useInput((input, _) => {
-    if (isFocused && input === 'j') {
+  useInput((input, key) => {
+    if (isFocused && (input === 'j' || key.downArrow)) {
       setSelected(Math.min(lst.length - 1, selected + 1));
     }
-    if (isFocused && input === 'k' ) {
+    if (isFocused && (input === 'k' || key.upArrow)) {
       setSelected(Math.max(0, selected - 1));
     }
-    if (isFocused && input === 'h') {
+    if (isFocused && (input === 'h' || key.leftArrow)) {
       focusPrevious();
     }
   });

@@ -33,17 +33,17 @@ const BucketViewer: React.FC<{lst: string[], setObjects: (l: string[]) => void, 
     
   }, [selected, lst])
 
-  useInput((input, _) => {
+  useInput((input, key) => {
     if (input === "q") {
       exit();
     }
-    if (isFocused && input === 'j') {
+    if (isFocused && (input === 'j' || key.downArrow)) {
       setSelected(Math.min(lst.length - 1, selected + 1));
     }
-    if (isFocused && input === 'k') {
+    if (isFocused && (input === 'k' || key.upArrow)) {
       setSelected(Math.max(0, selected - 1));
     }
-    if (isFocused && input === 'l') {
+    if (isFocused && (input === 'l' || key.rightArrow)) {
       focusNext();
     }
   });
